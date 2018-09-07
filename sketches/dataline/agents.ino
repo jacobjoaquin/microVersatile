@@ -1,6 +1,8 @@
 int agentMode = 0;
 const int agentModeRandom = 0;
 const int agentModeMirrored = 1;
+int cycleDisorientIndex = 0;
+
 
 void doAgents() {
   // Random Agents
@@ -87,7 +89,7 @@ void createAgent(int position, int length, float direction, uint8_t color, int f
   agentIndex = (agentIndex + 1) % nAgents;
 }
 
-int cycleDisorientIndex = 0;
+
 void cycleDisorient() {
   //  int position = random(ledsPerStrip);
   int position = ledsPerStrip / 2 - 20;

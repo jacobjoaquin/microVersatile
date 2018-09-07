@@ -24,7 +24,7 @@ void glitch() {
       for (int i = start; i < start + nFlicker; ++i) {
         int index = i % nLeds;
         if (buffer[index] >= 1) {
-        uint32_t thisColor = palette[white];
+          uint32_t thisColor = palette[white];
 
           if (random(100) < 40) {
             thisColor = palette[yellow];
@@ -32,7 +32,7 @@ void glitch() {
           thisColor = shiftColor(thisColor, shift);
           buffer[index] = thisColor;
         }
-        
+
       }
     } else {
       if (frame >= nextGlitch + glitchFrames) {

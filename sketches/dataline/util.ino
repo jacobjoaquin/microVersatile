@@ -1,3 +1,4 @@
+// Map serpentine to grid
 int16_t XY(uint16_t x, uint16_t y) {
   int i = x % 2;
   return (x + i) * kMatrixHeight - i + (i ? -y : y);
