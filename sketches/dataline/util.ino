@@ -1,5 +1,11 @@
 // Map serpentine to grid
 int16_t XY(uint16_t x, uint16_t y) {
+  // The first LED panel in microVersatile is wired in upside. This compensates.
+  if (x < panelWidth) {
+    x = (panelWidth - 1) - x;
+    y = (panelHeight - 1) - y;
+  }
+  
   int i = x % 2;
   return (x + i) * kMatrixHeight - i + (i ? -y : y);
 }
@@ -33,14 +39,7 @@ void displayLEDs() {
 void bufferToLEDs() {
   for (int y = 0; y < kMatrixHeight; ++y) {
     for (int x = 0; x < kMatrixWidth; ++x) {
-      int index = 0;
-
-      if (x < panelWidth) {
-        index = XY((panelWidth - 1) - x, (panelHeight - 1) - y);
-      } else {
-        index = XY(x, y);
-      }
-
+      int index = XY(x, y);
       uint32_t c = buffer[x + y * kMatrixWidth];
       uint8_t r = randomBuffer[x + y * kMatrixWidth];
       c = lerpColor(0, c, r);
