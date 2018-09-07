@@ -34,7 +34,14 @@ CRGB c2 = CRGB(255, 32, 128);
 
 CRGB leds[nLEDs + 1];
 
-int16_t XY(uint8_t x, uint8_t y) {
+// Map serpentine to grid
+int16_t XY(uint16_t x, uint16_t y) {
+  // The first LED panel in microVersatile is wired in upside. This compensates.
+  if (x < panelWidth) {
+    x = (panelWidth - 1) - x;
+    y = (panelHeight - 1) - y;
+  }
+  
   int i = x % 2;
   return (x + i) * kMatrixHeight - i + (i ? -y : y);
 }
@@ -143,16 +150,7 @@ void loop() {
         float amt = (1 - n) * g0 + n * g1;
         CRGB temp = cBlack.lerp8(c, amt * 255);
 
-        uint16_t index;
-
-        // Compensate for first panel being flipped
-        if (x < panelWidth) {
-          index = XY((panelWidth - 1) - x, (panelHeight - 1) - y);
-        } else {
-          index = XY(x, y);
-        }
-
-        leds[index] = temp;
+        leds[XY(x, y)] = temp;
       }
 
     }
