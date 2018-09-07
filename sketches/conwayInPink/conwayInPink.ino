@@ -152,8 +152,8 @@ void loop() {
 
         leds[XY(x, y)] = temp;
       }
-
     }
+    
     FastLED.show();
     delay(frameDelay);
   }
