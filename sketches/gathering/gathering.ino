@@ -143,7 +143,7 @@ void loop() {
   doAgents();
 
   // Disorient
-  if (!(frame % 240)) {
+  if (!(frame % 120)) {
     cycleDisorient();
   }
 

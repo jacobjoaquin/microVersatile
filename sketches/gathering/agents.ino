@@ -49,13 +49,13 @@ void newAgent() {
   zPtr->framesLeft = nFrames / speed;
   zPtr->nFrames = nFrames / speed;
   zPtr->length = random(1, 8);
-  zPtr->color = random(2) == 0 ? pink : orange;
+  zPtr->color = random(2) == 0 ? cyan : magenta;
 
   uint32_t r = random(100);
   if (r < 50) {
-    zPtr->color = orange;
+    zPtr->color = cyan;
   } else {
-    zPtr->color = pink;
+    zPtr->color = magenta;
   }
 
   agentIndex = (agentIndex + 1) % nAgents;
@@ -69,7 +69,7 @@ void newMirroredAgent() {
   int position = ledsPerStrip / 2 + (random(nStrips)) * kMatrixWidth;
   float direction = (random(2) ? 1 : -1) * speed;
   int length = random(1, 8);
-  uint8_t color = random(2) == 0 ? pink : orange;
+  uint8_t color = random(2) == 0 ? cyan : magenta;
 
   createAgent(position, length, direction, color, nFrames);
   createAgent(position, length, -direction, color, nFrames);
@@ -93,12 +93,12 @@ void createAgent(int position, int length, float direction, uint8_t color, int f
 void cycleDisorient() {
   //  int position = random(ledsPerStrip);
   int position = ledsPerStrip / 2 - 20;
-  uint8_t color = random(2) ? pink : orange;
+  uint8_t color = random(2) ? cyan : magenta;
   //  uint8_t color = white;
   int direction = random(2) ? 1 : -1;
   int length = random(1, 4);
   length = 1;
-  String disorient = "disorient     ";
+  String disorient = "Gathering of the Unlimited Devotion     ";
 
   if (direction == 1) {
     position -= ledsPerStrip / 3;
