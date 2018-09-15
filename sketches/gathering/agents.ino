@@ -130,7 +130,6 @@ void updateAgents() {
       zPtr->framesLeft--;
       zPtr->position += zPtr->direction;
       uint32_t c = lerpColor(palette[zPtr->color], 0, float(zPtr->framesLeft) / (float) zPtr->nFrames);
-      //      uint32_t c = zPtr->color;
       int length = zPtr->length;
       int position = zPtr->position;
 
