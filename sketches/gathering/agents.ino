@@ -96,8 +96,7 @@ void cycleDisorient() {
   uint8_t color = random(2) ? cyan : magenta;
   //  uint8_t color = white;
   int direction = random(2) ? 1 : -1;
-  int length = random(1, 4);
-  length = 1;
+  int length = 1;
   String disorient = "Gathering of the Unlimited Devotion     ";
 
   if (direction == 1) {
@@ -109,7 +108,7 @@ void cycleDisorient() {
   char c = disorient[cycleDisorientIndex];
   cycleDisorientIndex = (cycleDisorientIndex + 1) % disorient.length();
   uint8_t w = disorientFont2017Widths[(int) c];
-  int nFrames = random(60, 100);
+  int nFrames = 100;
   for (int y = 0; y < 8; ++y) {
     int stripOffset = stripOrder[y] * ledsPerStrip;
 

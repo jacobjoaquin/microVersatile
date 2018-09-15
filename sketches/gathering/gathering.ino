@@ -52,7 +52,7 @@ struct Agent {
 
 
 // User-defined
-const int frameRate = 60;
+const int frameRate = 50;
 const int letterSpacing = 1;
 
 // User defined colors
