@@ -63,6 +63,7 @@ uint32_t colorWhite = rgb(255, 255, 255);
 uint32_t colorPink = rgb(128, 0, 64);
 uint32_t colorCyan = rgb(0, 255, 255);
 uint32_t colorYellow = rgb(255, 255, 128);
+uint32_t colorPurple = rgb(128, 0, 128);
 
 // Color constants
 const uint8_t black = 0;
@@ -72,7 +73,11 @@ const uint8_t white = 3;
 const uint8_t magenta = 4;
 const uint8_t cyan = 5;
 const uint8_t yellow = 6;
-uint32_t palette[] = {colorBlack, colorOrange, colorPink, colorWhite, colorMagenta, colorCyan, colorYellow};
+const uint8_t purple = 7;
+uint32_t palette[] = {colorBlack, colorOrange, colorPink, colorWhite, colorMagenta, colorCyan, colorYellow, colorPurple};
+
+const uint8_t color_0 = magenta;
+const uint8_t color_1 = cyan;
 
 // Program constants
 const uint8_t stripOrder[] = {0, 1, 2, 3, 4, 5, 6, 7};
