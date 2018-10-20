@@ -57,11 +57,11 @@ const int letterSpacing = 1;
 
 // User defined colors
 uint32_t colorOrange = rgb(255, 48, 0);
-uint32_t colorMagenta = rgb(255, 0, 92);
+uint32_t colorMagenta = rgb(128, 0, 92);
 uint32_t colorBlack = rgb(0, 0, 0);
 uint32_t colorWhite = rgb(255, 255, 255);
 uint32_t colorPink = rgb(128, 0, 64);
-uint32_t colorCyan = rgb(0, 255, 255);
+uint32_t colorCyan = rgb(0, 255, 128);
 uint32_t colorYellow = rgb(255, 255, 128);
 
 // Color constants
@@ -73,6 +73,9 @@ const uint8_t magenta = 4;
 const uint8_t cyan = 5;
 const uint8_t yellow = 6;
 uint32_t palette[] = {colorBlack, colorOrange, colorPink, colorWhite, colorMagenta, colorCyan, colorYellow};
+
+const uint8_t color0 = magenta;
+const uint8_t color1 = cyan;
 
 // Program constants
 const uint8_t stripOrder[] = {0, 1, 2, 3, 4, 5, 6, 7};
@@ -106,7 +109,7 @@ int sanityPin = 13;
 // Agents
 const int nAgents = 1600;
 Agent agentList[nAgents];
-int agentLength = 5;
+int agentLength = 10;
 int agentFrames = 40;
 int agentIndex = 0;
 
@@ -117,7 +120,7 @@ uint32_t frame = 0;
 
 uint16_t textWidth = 0;
 int scrollOffset = 0;
-const String message = "Hello, World!        Live practie test.        No Computer, Hardware only.  :)    ";
+const String message = "Welcome to live practive.                                              ";
 
 void setup() {
   FastLED.addLeds<CHIPSET, STRIP_PIN_0, COLOR_ORDER>(ledsBuffer, 0, 256).setCorrection(TypicalSMD5050);
@@ -167,7 +170,7 @@ void loop() {
   glitch();
 
   // Message
-  doMessage();
+//  doMessage();
 
   // Last
   bufferToLEDs();
