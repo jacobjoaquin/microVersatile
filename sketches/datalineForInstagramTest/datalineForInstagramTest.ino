@@ -117,10 +117,12 @@ int agentIndex = 0;
 ulong showTime = millis() + frameDelay;
 uint32_t frame = 0;
 
-
+// Always Be knolling
+// Python Music Library
+// Edublocks
 uint16_t textWidth = 0;
 int scrollOffset = 0;
-const String message = "Welcome to live practive.                                              ";
+const String message = "Gathering of the Unlimited Devotion                                                                       2 riders max                                                                       do not stand                                                                       ";
 
 void setup() {
   FastLED.addLeds<CHIPSET, STRIP_PIN_0, COLOR_ORDER>(ledsBuffer, 0, 256).setCorrection(TypicalSMD5050);
@@ -170,7 +172,7 @@ void loop() {
   glitch();
 
   // Message
-//  doMessage();
+  doMessage();
 
   // Last
   bufferToLEDs();
